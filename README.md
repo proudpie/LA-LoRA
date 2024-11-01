@@ -13,8 +13,6 @@ Applications of proposed various LoRA strategies to a single Transformer layer, 
 ![image](https://github.com/user-attachments/assets/ba94ee67-2f3f-43c0-a52b-6cde29c9224a)
 
 # Experiments
-![1730444770585](https://github.com/user-attachments/assets/4bd1c4df-d0e3-4b8e-8f8c-9b79184363b4)
-![image](https://github.com/user-attachments/assets/bbc89fdc-5fda-4d7d-9067-6a5082b6f9d1)
-![image](https://github.com/user-attachments/assets/8b54427f-23f3-4079-bbe3-dc2d91dc20ee)
+![image](https://github.com/user-attachments/assets/5773e7bd-8fc1-4f88-aaf7-c14c02d87b11)
 
 
