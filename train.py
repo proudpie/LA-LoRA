@@ -1,3 +1,6 @@
+# Our training code cannot be fully disclosed due to company confidentiality. 
+# Here, we only demonstrate how to incorporate our algorithm module into the training framework. 
+# Taking Fairseq (https://github.com/facebookresearch/fairseq) as an example, we modify its core training code as shown below.
 # fairseq/fairseq_cli/train.py (modified)
 
 #!/usr/bin/env python3 -u
@@ -40,7 +43,7 @@ from fairseq.distributed import utils as distributed_utils
 from fairseq.file_io import PathManager
 from fairseq.logging import meters, metrics, progress_bar
 from fairseq.model_parallel.megatron_trainer import MegatronTrainer
-from fairseq.trainer import Trainer
+from fairseq.trainer import Trainer # use the modified trainer.py in this project!
 
 
 def main(cfg: FairseqConfig) -> None:
@@ -101,6 +104,12 @@ def main(cfg: FairseqConfig) -> None:
     logger.info("task: {}".format(task.__class__.__name__))
     logger.info("model: {}".format(model.__class__.__name__))
     logger.info("criterion: {}".format(criterion.__class__.__name__))
+
+    top_layers = [...]  # Fill in the top_layers list with the names of the first p% important lora layers
+    for n, p in model.named_parameters():
+        if n not in model.named_parameters():
+            p.requires_grad = False
+            
     logger.info(
         "num. shared model params: {:,} (num. trained: {:,})".format(
             sum(
