@@ -490,3 +490,4 @@ class Trainer(object):
 
         metrics.log_stop_time("train_wall")
         return logging_output
+
